@@ -54,9 +54,19 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+
+/* Hide entire scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
+}
+
+/* Hide only scrollbar buttons */
+.no-scrollbar-btn::-webkit-scrollbar-button {
+  display: none;
 }
 
 :root {
