@@ -26,7 +26,7 @@ export default function AddTeacher() {
   return (
     <div  className="lg:w-125 w-full h-125 bg-white relative rounded-md flex justify-center flex-col  items-center py-6 px-7">
         <h1 className={`text-center ${bricolage.className}  text-[24px] font-extrabold`}>Add Teacher</h1>
-        <MdCancel  className="absolute right-3 top-7 cursor-pointer" onClick={toggleAddModal} size={25}/>
+        <MdCancel  className="absolute right-3 top-7 cursor-pointer" onClick={()=>toggleAddModal(null)} size={25}/>
     <form className="w-full max-w-sm px-2 overflow-y-scroll no-scrollbar">
       <FieldGroup>
                 <div className="grid grid-cols-2 gap-4">
