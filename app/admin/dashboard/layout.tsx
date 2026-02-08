@@ -20,8 +20,7 @@ export default function AdminLayout({
   return (
       
     <AppContext.Provider value={{display,toggleAddModal}}>
-
-    <div className={`flex antialiased relative`}>
+    <div className={`flex antialiased relative `}>
       {display && <div onClick={()=>toggleAddModal(null)} className="fixed inset-0 z-10 bg-[#0000009e] backdrop-blur-xs bottom-0 flex items-center justify-center">
         <div onClick={(e)=>e.stopPropagation()} className=" relative">
         {display==="student" && <AddStudent/>}
@@ -32,9 +31,9 @@ export default function AdminLayout({
         
         </div>}
       <Sidebar />
-      <div className='w-full ml-60  h-full text-gray-900'>
+      <div className='w-full ml-60  h-auto text-gray-900'>
         <Topbar />
-        <div className={`p-4  bg-white mt-20 `}>{children}</div>
+        <div className={`p-4 pb-0  bg-white shadow mt-24 h-full rounded-sm mb-4 border  mx-4 `}>{children}</div>
       </div>
     </div>
     </AppContext.Provider>

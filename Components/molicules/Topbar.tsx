@@ -1,6 +1,6 @@
 "use client"
 
-import { bricolage, kumbh_Sans } from "@/fonts/font";
+import { bricolage,kumbh_Sans } from "@/fonts/font";
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
 import { BsBell, BsPerson } from "react-icons/bs";
@@ -11,11 +11,11 @@ export default function Topbar() {
     <aside className="bg-white shadow-md flex items-center justify-center px-4  h-20 right-0 left-60 fixed z-3  ">
       <header className="flex items-center w-full justify-between gap-x-20">
         <h1>Dashboard</h1>
-        <div className="h-10 w-full bg-[#b4b4b436] flex items-center justify-center rounded-lg p-3 text-center">
+        <div className="h-10 w-full bg-[#ffffffde] border-t border-black  flex items-center justify-center rounded-lg p-3 text-center">
          <div  className="w-full flex items-center gap-x-3 justify-between">
           <div className="flex-1 flex items-center gap-x-0.5 justify-start">
           <BiSearch className="text-[#8B909A] " size={16} />
-           <input placeholder="Search" type="text"  className={`flex flex-1 text-sm tracking-[0%] list-inside leading-5 outline-none placeholder:text-gray-300 ${kumbh_Sans.className}`}/>
+           <input placeholder="Search" type="text"  className={`flex flex-1 text-sm tracking-[0%] list-inside  text-black leading-5 outline-none placeholder:text-gray-300 ${kumbh_Sans.className}`}/>
           </div>
            <MdDashboard className="text-[#8B909A]" size={25}/>
           </div>

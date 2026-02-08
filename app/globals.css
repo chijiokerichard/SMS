@@ -5,10 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 .neu-inset {
-  background: #ede9ef;
+  background: #fff;
   box-shadow:
-    inset 5px 5px 10px #babecc,
-    inset -5px -5px 10px #ffffff;
+    /* inset 5px 5px 10px #babecc,
+    inset -5px -5px 10px #ffffff; */
 }
 
 @theme inline {
