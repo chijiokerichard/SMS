@@ -38,7 +38,7 @@ export function StudentLIstTable() {
   console.log(selectedStudents);
   return (
     <div className="flex flex-col gap-y-5">
-      <Table className="[&_tbody_tr:nth-child(odd)]:bg-[#6734c71d]">
+      <Table className="[&_tbody_tr:nth-child(odd)]:bg-black/3">
         <TableHeader className=" text-white">
           <TableRow>
             <TableHead>ID</TableHead>

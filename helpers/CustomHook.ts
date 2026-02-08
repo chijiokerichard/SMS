@@ -1,9 +1,14 @@
 import { useState } from "react";
 
-export function useCustomState(){
-    const [state,setState] = useState<Boolean>(false)
+export function useCustomState(initial=false){
+    const [state,setState] = useState<boolean>(initial)
     function toggleState(){
-        setState(prev=>!prev)
+        setState(prev=>prev=true)
+        console.log(state)
     }
-    return [state,toggleState]
+    function toggleStateOut(){
+        setState(prev=>prev=false)
+        console.log(state)
+    }
+    return [state,toggleState,toggleStateOut] as const
 }
