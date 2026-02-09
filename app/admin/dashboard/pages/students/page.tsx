@@ -1,22 +1,21 @@
 "use client";
-import LineChart from "@/Components/charts/LineCahrt";
-import PieChart from "@/Components/charts/PieChart";
+
 import BasicSelect from "@/Components/mui/BasicSelect";
-import PaymentTable from "@/Components/tables/PaymentTable";
+import StudentTable from "@/Components/tables/StudentTable";
 import Card from "@/Components/ui/home/card/Card";
 import CardContainer from "@/Components/ui/home/card/CardContainer";
 import CardDay from "@/Components/ui/home/card/CardDay";
-import CardTotal from "@/Components/ui/home/card/CardTotal";
 import CardWrapper from "@/Components/ui/home/card/CardWrapper";
-import HighlightsComp from "@/Components/ui/home/highlights/HighlightsComp";
 import { bricolage } from "@/fonts/font";
 import { AppContext } from "@/helpers/context";
 import { useContext } from "react";
-import { BsPeople } from "react-icons/bs";
-import { GiTeacher } from "react-icons/gi";
+import { GiRadioactive } from "react-icons/gi";
+import { GrCertificate } from "react-icons/gr";
+import { MdOutlineAssignment } from "react-icons/md";
+
 import { PiStudentFill } from "react-icons/pi";
 
-export default function Admin() {
+export default function StudentsDashboard() {
   const { toggleAddModal, display } = useContext(AppContext);
   const chartData = {
     labels: [
@@ -36,66 +35,74 @@ export default function Admin() {
   };
 
   return (
-    <main
-      className={`${display&& "overflow-hidden" } h-auto bg-white w-full`}
-    >
+    <main className={`${display && "overflow-hidden"} h-auto bg-white w-full`}>
       <div className="flex flex-col gap-y-5 ">
         <div className="flex flex-col">
           <div className="flex items-center justify-between w-full py-2">
-            <h1 className="">Overview</h1>
-            <div className="flex items-center justify-center gap-x-3">
+            <h1 className="">Students</h1>
+            <div className="flex items-center justify-center">
               <button
                 onClick={() => toggleAddModal("student")}
                 className={`bg-white text-black h-10 p-3 shadow-md border border-r-black rounded-lg cursor-pointer ${bricolage.className} text-[14px] text-center flex items-center font-medium justify-center`}
               >
                 Add Student
               </button>
-              <button
-                onClick={() => toggleAddModal("teacher")}
-                className={`bg-white text-black h-10 p-3 shadow-md border border-r-black rounded-lg cursor-pointer ${bricolage.className} text-[14px] text-center flex items-center font-medium justify-center`}
-              >
-                Add Teacher
-              </button>
             </div>
           </div>
           <hr className="text-[#acaaaa]" />
         </div>
         <CardWrapper>
-          <Card>
+          <Card width={200}>
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
-                <PiStudentFill size={25} color="white" />
+                <PiStudentFill size={20} color="white" />
               </div>
               <div className=" gap-y-3 ">
-                <CardDay>Total number of students</CardDay>
-                <CardTotal>20 Students</CardTotal>
+                <CardDay>
+                  Total
+                  <br /> 20 students
+                </CardDay>
               </div>
             </CardContainer>
           </Card>
-          <Card>
+          <Card width={200}>
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
-                <GiTeacher size={25} color="white" />
+                <GiRadioactive size={20} color="white" />
               </div>
               <div className=" gap-y-3 ">
-                <CardDay>Total number of teachers</CardDay>
-                <CardTotal>14 Teacher</CardTotal>
+                <CardDay>
+                  Total
+                  <br /> 10 Attendance
+                </CardDay>
               </div>
             </CardContainer>
           </Card>
-          <Card>
+          <Card width={200}>
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
-                <BsPeople size={25} color="white" />
+                <MdOutlineAssignment size={20} color="white" />
               </div>
               <div className=" gap-y-3 ">
-                <CardDay>Total number of users</CardDay>
-                <CardTotal>21 Persons</CardTotal>
+                <CardDay>View Assignments</CardDay>
+              </div>
+            </CardContainer>
+          </Card>
+          <Card width={200}>
+            <CardContainer>
+              <div className="bg-black p-2 rounded-sm">
+                <GrCertificate size={20} color="white" />
+              </div>
+              <div className=" gap-y-3 ">
+                <CardDay>
+                  View <br /> Results
+                </CardDay>
+                {/* <CardTotal>21 Persons</CardTotal> */}
               </div>
             </CardContainer>
           </Card>
         </CardWrapper>
-        <div className="flex gap-2 items-center justify-between">
+        {/* <div className="flex gap-2 items-center justify-between">
           <div className="w-117 h-80 border p-2 rounded-sm">
             <div className="flex items-center justify-between w-full">
               <span className={`text-[16px] ${bricolage.className} font-bold`}>
@@ -136,11 +143,24 @@ export default function Admin() {
             </div>
             <PieChart />
           </div>
+        </div> */}
+        <div className="flex items-center w-full justify-between">
+
+        <div className="flex gap-x-3">
+
+            <span className="text-[14px] text-[#191414] transform-border">
+                filter by class
+                </span>
+        <BasicSelect height={25}
+          text={["SS1", "SS2", "SS3"]}
+          bg={"white"}
+          color="black"
+          border="black"
+          />
         </div>
-        <div className="flex gap-2 items-center justify-between h-25 ">
-          <HighlightsComp/>
-        </div>
-        <PaymentTable/>
+        <input type="text" className=" px-2 py-1 border border-black w-[180px] outline-none text-[14px] rounded-md text-[12px]" placeholder="Search student" />
+          </div>
+        <StudentTable />
       </div>
     </main>
   );
