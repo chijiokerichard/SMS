@@ -38,7 +38,7 @@ export default function Admin() {
 
   return (
     <main
-      className={`${display&& "overflow-hidden" } h-auto bg-white w-full`}
+      className={`${display ? "overflow-hidden" : "h-screen"} bg-white w-full`}
     >
       <div className="flex flex-col gap-y-5 ">
         <div className="flex flex-col">
@@ -138,10 +138,9 @@ export default function Admin() {
             <PieChart />
           </div>
         </div>
-        <div className="flex gap-2 items-center justify-between h-25 ">
+        <div className="flex gap-2 items-center justify-between h-[100px] ">
           <HighlightsComp/>
         </div>
-        <PaymentTable/>
       </div>
     </main>
   );
