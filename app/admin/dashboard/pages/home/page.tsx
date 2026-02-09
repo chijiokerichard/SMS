@@ -2,6 +2,7 @@
 import LineChart from "@/Components/charts/LineCahrt";
 import PieChart from "@/Components/charts/PieChart";
 import BasicSelect from "@/Components/mui/BasicSelect";
+import PaymentTable from "@/Components/mui/tables/PaymentTable";
 import { StudentLIstTable } from "@/Components/StudentTable/StudentLIstTable";
 import Card from "@/Components/ui/home/card/Card";
 import CardContainer from "@/Components/ui/home/card/CardContainer";

@@ -33,6 +33,7 @@ export default function AdminLayout({
       <Sidebar />
       <div className='w-full ml-60  h-auto text-gray-900'>
         <Topbar />
+        <div className={`p-4 mb-0  bg-white shadow mt-24  rounded-sm pb-4 border border-b-0  mx-4 `}>{children}</div>
         <div className={`p-4 pb-0  bg-white shadow mt-24 h-full rounded-sm mb-4 border  mx-4 `}>{children}</div>
       </div>
     </div>
