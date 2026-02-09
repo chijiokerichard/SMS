@@ -25,15 +25,15 @@ export default function LoginPage() {
           <div className="flex flex-col gap-y-5.5">
             <input
               placeholder="username"
-              className="w-90 border  border-[#dcdade] rounded-xl px-5 py-3 outline-[#6734c7]"
+              className="w-90 border  border-[#dcdade] rounded-xl px-5 py-3 outline-black"
             />
             <input
               placeholder="password"
-              className="w-90 border border-[#dcdade] rounded-xl px-5 py-3 outline-[#6734c7]"
+              className="w-90 border border-[#dcdade] rounded-xl px-5 py-3  outline-black"
             />
           </div>
           <div className="h-29.25 flex flex-col gap-y-2.5">
-            <button onClick={onSubmit}  className={`bg-[#6734c7] relative cursor-pointer h-11 text-white rounded-lg text-center leading-[100%] tracking-[0px] px-5 py-3 w-full  ${bricolage.className}`}>
+            <button onClick={onSubmit}  className={`bg-black relative cursor-pointer h-11 text-white rounded-lg text-center leading-[100%] tracking-[0px] px-5 py-3 w-full  ${bricolage.className}`}>
               {!isLoading && "LOGIN"}
               {isLoading && (
                 <div className="absolute inset-0 flex items-center px-5 py-3 justify-center">
@@ -41,7 +41,7 @@ export default function LoginPage() {
                 </div>
               )}
             </button>
-            <p className={`text-[18px] text-[#6734c7]  text-center leading-[100%] tracking-[0px] font-light  ${bricolage.className}`}>forgotten your password?</p>
+            <p className={`text-[15px] text-black  text-center leading-[100%] tracking-[0px] font-light  ${bricolage.className}`}>forgotten your password?</p>
 
           </div>
         </div>

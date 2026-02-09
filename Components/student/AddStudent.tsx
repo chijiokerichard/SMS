@@ -111,10 +111,10 @@ export default function AddStudent() {
           <Input id="form-address" type="text" placeholder="123 Main St" />
         </Field>
         <Field orientation="horizontal">
-          <Button type="button" variant="outline" className="text-[#6734c7] border-[#6734c7]" >
+          <Button type="button" variant="outline" className="text-black border border-black" >
             Cancel
           </Button>
-          <Button type="submit" className="bg-[#6734c7]">Submit</Button>
+          <Button type="submit" className="bg-black">Submit</Button>
         </Field>
       </FieldGroup>
     </form>

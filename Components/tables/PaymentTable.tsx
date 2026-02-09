@@ -1,5 +1,5 @@
 "use client"
-import PaginationList from "../Pagination";
+import PaginationList from "../mui/Pagination";
 import {
   Table,
   TableBody,
@@ -9,7 +9,6 @@ import {
   TableRow,
 } from "@/Components/ui/table";
 import { bricolage } from "@/fonts/font";
-import { Checkbox } from "@/Components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
