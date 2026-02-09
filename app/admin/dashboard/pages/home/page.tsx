@@ -3,7 +3,6 @@ import LineChart from "@/Components/charts/LineCahrt";
 import PieChart from "@/Components/charts/PieChart";
 import BasicSelect from "@/Components/mui/BasicSelect";
 import PaymentTable from "@/Components/mui/tables/PaymentTable";
-import { StudentLIstTable } from "@/Components/StudentTable/StudentLIstTable";
 import Card from "@/Components/ui/home/card/Card";
 import CardContainer from "@/Components/ui/home/card/CardContainer";
 import CardDay from "@/Components/ui/home/card/CardDay";
@@ -38,7 +37,7 @@ export default function Admin() {
 
   return (
     <main
-      className={`${display ? "overflow-hidden" : "h-screen"} bg-white w-full`}
+      className={`${display&& "overflow-hidden" } h-auto bg-white w-full`}
     >
       <div className="flex flex-col gap-y-5 ">
         <div className="flex flex-col">
@@ -138,9 +137,10 @@ export default function Admin() {
             <PieChart />
           </div>
         </div>
-        <div className="flex gap-2 items-center justify-between h-[100px] ">
+        <div className="flex gap-2 items-center justify-between h-25 ">
           <HighlightsComp/>
         </div>
+        <PaymentTable/>
       </div>
     </main>
   );
