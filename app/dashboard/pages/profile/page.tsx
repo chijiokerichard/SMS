@@ -16,7 +16,7 @@ import { BsPeople } from "react-icons/bs";
 import { GiTeacher } from "react-icons/gi";
 import { PiStudentFill } from "react-icons/pi";
 
-export default function Admin() {
+export default function Profile() {
   const { toggleAddModal, display } = useContext(AppContext);
   const chartData = {
     labels: [

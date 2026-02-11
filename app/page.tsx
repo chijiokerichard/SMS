@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <div className="flex min-h-screen items-start flex-col justify-center p-16 no-scrollbar  font-sans"
             style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundPosition:"center" }}
-
     >
          <LoginPage/>
     </div>

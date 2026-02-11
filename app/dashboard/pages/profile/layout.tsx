@@ -1,6 +1,6 @@
 "use client";
-import Sidebar from "@/Components/molicules/Sidebar";
-import Topbar from "@/Components/molicules/Topbar";
+import SideBar from "@/Components/molicules/students/SideBar";
+import TopBar from "@/Components/molicules/students/TopBar";
 import AddStudent from "@/Components/student/AddStudent";
 import AddTeacher from "@/Components/teacher/AddTeacher";
 import { AppContext } from "@/helpers/context";
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 type modalType = "student" | "teacher" | null;
 
-export default function AdminLayout({
+export default function ProfileLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -42,9 +42,9 @@ export default function AdminLayout({
             </div>
           </div>
         )}
-        <Sidebar />
+        <SideBar />
         <div className="w-full ml-60  h-auto text-gray-900">
-          <Topbar />
+          <TopBar />
           <div
             className={`p-4 mb-0  bg-white shadow mt-24  rounded-sm pb-4 border border-b-0  mx-4 `}
           >

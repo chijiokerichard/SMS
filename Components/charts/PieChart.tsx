@@ -7,8 +7,9 @@ import styled from "styled-components";
 
 interface PieChartProps {
   datas?: {
-    labels: string[];
+    labels?: string[];
     income: number[];
+    colors?: string[];
   };
 }
 
@@ -28,18 +29,13 @@ export default function PieChart({ datas }: PieChartProps) {
     }
 
     const chartData: ChartData<"pie"> = {
-      labels: ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      labels: datas?.labels,
+      
       datasets: [
         
         {
-          data:[30,3,29,20,5],
-          backgroundColor: [
-            "#000",
-            "#0f0a0a6e",
-            "#171f24b6",
-            "#141412dd",
-            "#141412ce",
-          ],
+          data:datas?.income??[],
+          backgroundColor: datas?.colors,
           
         },
       ],
@@ -47,6 +43,7 @@ export default function PieChart({ datas }: PieChartProps) {
 
     const chartOptions: ChartOptions<any> = {
       responsive: true,
+      
       plugins: {
         legend: {
           display: false, //for shoing labels
