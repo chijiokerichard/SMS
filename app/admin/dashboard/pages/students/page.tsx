@@ -39,7 +39,20 @@ export default function StudentsDashboard() {
       <div className="flex flex-col gap-y-5 ">
         <div className="flex flex-col">
           <div className="flex items-center justify-between w-full py-2">
-            <h1 className="">Students</h1>
+            <div className="group relative cursor-pointer">
+        <span 
+          className="text-2xl font-black  text-black opacity-20"
+          style={{ WebkitTextStroke: '2px white' }}
+        >
+          Students
+        </span>
+        
+        <span 
+        className="absolute left-0 top-0 h-0 w-full overflow-hidden text-2xl font-black text-black transition-all duration-500 group-hover:h-full">
+          Students
+        </span>
+
+      </div>
             <div className="flex items-center justify-center">
               <button
                 onClick={() => toggleAddModal("student")}
@@ -52,7 +65,7 @@ export default function StudentsDashboard() {
           <hr className="text-[#acaaaa]" />
         </div>
         <CardWrapper>
-          <Card width={200}>
+          <Card width={200} path="admin/dashboard/pages/students">
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
                 <PiStudentFill size={20} color="white" />
@@ -88,7 +101,7 @@ export default function StudentsDashboard() {
               </div>
             </CardContainer>
           </Card>
-          <Card width={200}>
+          <Card width={200} path="/admin/dashboard/pages/result">
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
                 <GrCertificate size={20} color="white" />
@@ -145,21 +158,24 @@ export default function StudentsDashboard() {
           </div>
         </div> */}
         <div className="flex items-center w-full justify-between">
-
-        <div className="flex gap-x-3">
-
+          <div className="flex gap-x-3">
             <span className="text-[14px] text-[#191414] transform-border">
-                filter by class
-                </span>
-        <BasicSelect height={25}
-          text={["SS1", "SS2", "SS3"]}
-          bg={"white"}
-          color="black"
-          border="black"
+              filter by class
+            </span>
+            <BasicSelect
+              height={25}
+              text={["SS1", "SS2", "SS3"]}
+              bg={"white"}
+              color="black"
+              border="black"
+            />
+          </div>
+          <input
+            type="text"
+            className=" px-2 py-1 border border-black w-[180px] outline-none text-[14px] rounded-md text-[12px]"
+            placeholder="Search student"
           />
         </div>
-        <input type="text" className=" px-2 py-1 border border-black w-[180px] outline-none text-[14px] rounded-md text-[12px]" placeholder="Search student" />
-          </div>
         <StudentTable />
       </div>
     </main>
