@@ -1,4 +1,5 @@
 "use client";
+import BarChartIcon from "@/assets/images/svg/BarchartIcon";
 import LineChart from "@/Components/charts/LineCahrt";
 import PieChart from "@/Components/charts/PieChart";
 import BasicSelect from "@/Components/mui/BasicSelect";
@@ -8,6 +9,7 @@ import CardContainer from "@/Components/ui/home/card/CardContainer";
 import CardDay from "@/Components/ui/home/card/CardDay";
 import CardTotal from "@/Components/ui/home/card/CardTotal";
 import CardWrapper from "@/Components/ui/home/card/CardWrapper";
+import HighLight from "@/Components/ui/home/highlights/HighLight";
 import HighlightsComp from "@/Components/ui/home/highlights/HighlightsComp";
 import { bricolage } from "@/fonts/font";
 import { AppContext } from "@/helpers/context";
@@ -136,17 +138,21 @@ export default function Admin() {
             </div>
             <PieChart datas={{
               income:[200,70,100,399,30],
-              colors:[ "#000",
-            "#0f0a0a6e",
-            "#171f24b6",
-            "#141412dd",
-            "#141412ce",],
+              colors:[ "#403f48",
+            "#04030b",
+            "#161616",
+            "#03020c",
+            "#1c1c1d",],
             labels:["Monday","Tuesday","Wednesday","Thursday","Friday"]
             }} />
           </div>
         </div>
         <div className="flex gap-2 items-center justify-between h-25 ">
-          <HighlightsComp/>
+          <div className="flex  items-center justify-between w-full gap-1">
+              <HighLight img={<BarChartIcon color="#000" size={60}  />} title='Budgets' amount='$12,400,0' percentage='20%'/>
+              <HighLight img={<BarChartIcon color="#000" size={60}  />} title='Revenue' amount='$19,000' percentage='+15%'/>
+              <HighLight img={<BarChartIcon color="#000" size={60}  />} title='Expenses' color="red" amount='$22,909,880' percentage='-5%'/>
+              </div>
         </div>
         <PaymentTable/>
       </div>

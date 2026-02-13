@@ -4,7 +4,6 @@ import LineChart from "@/Components/charts/LineCahrt";
 import PieChart from "@/Components/charts/PieChart";
 import BasicSelect from "@/Components/mui/BasicSelect";
 import ResultTable from "@/Components/tables/ResultTable";
-import StudentTable from "@/Components/tables/StudentTable";
 import Card from "@/Components/ui/home/card/Card";
 import CardContainer from "@/Components/ui/home/card/CardContainer";
 import CardDay from "@/Components/ui/home/card/CardDay";
@@ -12,7 +11,6 @@ import CardWrapper from "@/Components/ui/home/card/CardWrapper";
 import { bricolage } from "@/fonts/font";
 import { AppContext } from "@/helpers/context";
 import { useContext } from "react";
-import { GiRadioactive } from "react-icons/gi";
 import { GrCertificate } from "react-icons/gr";
 import { MdOutlineAssignment } from "react-icons/md";
 
@@ -86,7 +84,7 @@ export default function ResultPage() {
                 <MdOutlineAssignment size={20} color="white" />
               </div>
               <div className=" gap-y-3 ">
-                <CardDay>View Subjects</CardDay>
+                <CardDay>View <br /> Subjects</CardDay>
               </div>
             </CardContainer>
           </Card>
@@ -139,9 +137,9 @@ export default function ResultPage() {
               datas={{
                 labels: ["Pass", "Excellent", "Failed"],
                 income: [30, 80, 98],
-                colors: [  "#0f0a0a6e",
-            "#171f24b6",
-            "#141412dd",],
+                colors: [  "#1a1a1c",
+            "#464449",
+            "#19191a",],
               }}
             />
           </div>

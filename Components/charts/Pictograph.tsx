@@ -4,6 +4,7 @@ import { Chart } from "chart.js";
 import type { ChartData, ChartOptions } from "chart.js";
 import "chart.js/auto";
 import styled from "styled-components";
+import { bricolage } from "@/fonts/font";
 
 interface LineChartProps {
   data: {
@@ -13,7 +14,7 @@ interface LineChartProps {
   };
 }
 
-function LineChart({ data }: LineChartProps) {
+function PictoChart({ data }: LineChartProps) {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   const chartInstance = useRef<Chart | null>(null);
 
@@ -53,7 +54,7 @@ function LineChart({ data }: LineChartProps) {
             label: "Total Income",
             data: data.income,
 
-            backgroundColor: "#100e1b", // For fill color
+            backgroundColor: "#432dd7", // For fill color
             borderColor: "0", // for wave line
             borderWidth: 0,
             pointRadius: 0,
@@ -97,7 +98,7 @@ function LineChart({ data }: LineChartProps) {
               font: {
                 weight: 500,
                 size: 12,
-                // family: `${plusJakata.className}`,
+                family: `${bricolage.className}`,
               },
             },
             offset: true,
@@ -154,7 +155,7 @@ function LineChart({ data }: LineChartProps) {
       };
 
       chartInstance.current = new Chart(chartCanvas, {
-        type: "bar",
+        type: "line",
         data: chartData,
         options: chartOptions,
         plugins:[dashedGridLinesPlugin]
@@ -174,10 +175,10 @@ function LineChart({ data }: LineChartProps) {
   return (
     <ChartStyle className="flex items-end mx-auto  justify-center flex-col">
       {/* <div className="w-full h-fit"> */}
-      <canvas ref={chartRef} className="h-[400px] w-fit " />
+      <canvas ref={chartRef} className="h-100 w-fit " />
       {/* </div> */}
     </ChartStyle>
   );
 }
 
-export default LineChart;
+export default PictoChart;
