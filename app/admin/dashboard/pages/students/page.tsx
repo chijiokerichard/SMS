@@ -13,7 +13,7 @@ import { GiRadioactive } from "react-icons/gi";
 import { GrCertificate } from "react-icons/gr";
 import { MdOutlineAssignment } from "react-icons/md";
 
-import { PiStudentFill } from "react-icons/pi";
+import { FaAward } from "react-icons/fa";
 
 export default function StudentsDashboard() {
   const { toggleAddModal, display } = useContext(AppContext);
@@ -68,12 +68,12 @@ export default function StudentsDashboard() {
           <Card width={200} path="admin/dashboard/pages/students">
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
-                <PiStudentFill size={20} color="white" />
+                <FaAward size={20} color="white" />
               </div>
               <div className=" gap-y-3 ">
                 <CardDay>
-                  Total
-                  <br /> 20 students
+                  Awarded
+                  <br />students
                 </CardDay>
               </div>
             </CardContainer>

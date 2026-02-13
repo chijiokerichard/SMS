@@ -30,23 +30,22 @@ export default function PieChart({ datas }: PieChartProps) {
 
     const chartData: ChartData<"pie"> = {
       labels: datas?.labels,
-      
+
       datasets: [
-        
         {
-          data:datas?.income??[],
+          data: datas?.income ?? [],
           backgroundColor: datas?.colors,
-          
         },
       ],
     };
 
     const chartOptions: ChartOptions<any> = {
       responsive: true,
-      
+
       plugins: {
         legend: {
-          display: false, //for shoing labels
+          display: true, //for shoing labels
+          position: "top" as const,
         },
         tooltip: {
           enabled: true,
@@ -67,7 +66,7 @@ export default function PieChart({ datas }: PieChartProps) {
 
   return (
     <ChartWrapper className="flex justify-center h-60 w-70">
-      <canvas ref={chartRef} className=""/>
+      <canvas ref={chartRef} className="" />
     </ChartWrapper>
   );
 }

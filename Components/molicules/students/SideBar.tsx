@@ -8,7 +8,7 @@ import { BiLogOut } from "react-icons/bi";
 export default function SideBar() {
     const pathName = usePathname()
   return (
-    <aside className="bg-green-700 border-r border-r-[#8B909A] p-3.5 h-screen w-60 fixed">
+    <aside className="bg-black border-r border-r-[#8B909A] p-3.5 h-screen w-60 fixed">
         <header>
             <div className="h-28.5 w-full flex flex-col justify-center items-start  py-3.75 px-7.5 ">
                 <h1 className="text-[20px] text-[#e4e0e0]">Logo</h1>

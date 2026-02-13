@@ -1,20 +1,20 @@
 "use client";
-import LineChart from "@/Components/charts/LineCahrt";
-import PieChart from "@/Components/charts/PieChart";
-import BasicSelect from "@/Components/mui/BasicSelect";
+
+import BarChartIcon from "@/assets/images/svg/BarchartIcon";
 import PaymentTable from "@/Components/tables/PaymentTable";
 import Card from "@/Components/ui/home/card/Card";
 import CardContainer from "@/Components/ui/home/card/CardContainer";
 import CardDay from "@/Components/ui/home/card/CardDay";
 import CardTotal from "@/Components/ui/home/card/CardTotal";
 import CardWrapper from "@/Components/ui/home/card/CardWrapper";
-import HighlightsComp from "@/Components/ui/home/highlights/HighlightsComp";
-import { bricolage } from "@/fonts/font";
+import HighLight from "@/Components/ui/home/highlights/HighLight";
+
 import { AppContext } from "@/helpers/context";
 import { useContext } from "react";
-import { BsPeople } from "react-icons/bs";
-import { GiTeacher } from "react-icons/gi";
-import { PiStudentFill } from "react-icons/pi";
+
+import { FaAward, FaTasks } from "react-icons/fa";
+import { IoBookSharp } from "react-icons/io5";
+import { PiCertificateFill } from "react-icons/pi";
 
 export default function Profile() {
   const { toggleAddModal, display } = useContext(AppContext);
@@ -43,110 +43,64 @@ export default function Profile() {
         <div className="flex flex-col">
           <div className="flex items-center justify-between w-full py-2">
             <h1 className="">Overview</h1>
-            <div className="flex items-center justify-center gap-x-3">
-              <button
-                onClick={() => toggleAddModal("student")}
-                className={`bg-white text-black h-10 p-3 shadow-md border border-r-black rounded-lg cursor-pointer ${bricolage.className} text-[14px] text-center flex items-center font-medium justify-center`}
-              >
-                Add Student
-              </button>
-              <button
-                onClick={() => toggleAddModal("teacher")}
-                className={`bg-white text-black h-10 p-3 shadow-md border border-r-black rounded-lg cursor-pointer ${bricolage.className} text-[14px] text-center flex items-center font-medium justify-center`}
-              >
-                Add Teacher
-              </button>
-            </div>
+           
           </div>
           <hr className="text-[#acaaaa]" />
         </div>
         <CardWrapper>
-          <Card>
+          <Card width={230}>
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
-                <PiStudentFill size={25} color="white" />
+                <FaAward size={25} color="white" />
               </div>
               <div className=" gap-y-3 ">
-                <CardDay>Total number of students</CardDay>
-                <CardTotal>20 Students</CardTotal>
+                <CardDay>My Awards</CardDay>
+                <CardTotal>20 Awards</CardTotal>
               </div>
             </CardContainer>
           </Card>
-          <Card>
+          <Card width={230}>
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
-                <GiTeacher size={25} color="white" />
+                <PiCertificateFill size={25} color="white" />
               </div>
               <div className=" gap-y-3 ">
-                <CardDay>Total number of teachers</CardDay>
-                <CardTotal>14 Teacher</CardTotal>
+                <CardDay>My Results</CardDay>
+                <CardTotal>4 Results</CardTotal>
               </div>
             </CardContainer>
           </Card>
-          <Card>
+          <Card width={230}>
             <CardContainer>
               <div className="bg-black p-2 rounded-sm">
-                <BsPeople size={25} color="white" />
+                <FaTasks size={25} color="white" />
               </div>
               <div className=" gap-y-3 ">
-                <CardDay>Total number of users</CardDay>
-                <CardTotal>21 Persons</CardTotal>
+                <CardDay>My Exercises</CardDay>
+                <CardTotal>5 Exercises</CardTotal>
+
+              </div>
+            </CardContainer>
+          </Card>
+          <Card width={230}>
+            <CardContainer>
+              <div className="bg-black p-2 rounded-sm">
+                <IoBookSharp size={25} color="white" />
+              </div>
+              <div className=" gap-y-3 ">
+                <CardDay>My Subjects</CardDay>
+                <CardTotal>6 Subjects</CardTotal>
               </div>
             </CardContainer>
           </Card>
         </CardWrapper>
-        <div className="flex gap-2 items-center justify-between">
-          <div className="w-117 h-80 border p-2 rounded-sm">
-            <div className="flex items-center justify-between w-full">
-              <span className={`text-[16px] ${bricolage.className} font-bold`}>
-                Student Increments
-              </span>
-              <BasicSelect
-                text={[
-                  "January",
-                  "February",
-                  "March",
-                  "April",
-                  "May",
-                  "June",
-                  "July",
-                  "August",
-                  "September",
-                  "November",
-                  "December",
-                ]}
-                bg={"white"}
-                color="black"
-                border="black"
-              />
-            </div>
-            <LineChart data={chartData} />
-          </div>
-          <div className="w-117 h-80 border p-2 rounded-sm justify-between">
-            <div className="flex items-center justify-between w-full">
-              <span className={`text-[16px] ${bricolage.className} font-bold`}>
-                Total Attendance
-              </span>
-              <BasicSelect
-                text={["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]}
-                bg={"white"}
-                color="black"
-                border="black"
-              />
-            </div>
-            <PieChart datas={{
-              income:[200,70,100,399,30],
-              colors:[ "#000",
-            "#0f0a0a6e",
-            "#171f24b6",
-            "#141412dd",
-            "#141412ce",],
-            labels:["Monday","Tuesday","Wednesday","Thursday","Friday"]
-            }} />
-          </div>
-        </div>
+      
         <div className="flex gap-2 items-center justify-between h-25 ">
-          <HighlightsComp/>
+           <div className="flex  items-center justify-between w-full gap-1">
+              <HighLight img={<BarChartIcon color="#000" size={60}  />} title='Performance' percentage='20%'/>
+              <HighLight img={<BarChartIcon color="#000" size={60}  />} title='Attendance'  percentage='15%'/>
+              <HighLight img={<BarChartIcon color="#000" size={60}  />} title='expenses' color="red" amount='$22,909' percentage='5%'/>
+              </div>
         </div>
         <PaymentTable/>
       </div>
